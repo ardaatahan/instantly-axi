@@ -104,7 +104,9 @@ instantly-axi campaigns --status active
 instantly-axi campaigns --fields id,name,status --limit 20 --after <cursor>
 
 # Campaign detail: status, schedule, and sequence steps (first body truncated;
-# --full shows every step body)
+# --full shows every step body). Schedule is read-only here by design - it's a
+# complex nested payload that's easy to get wrong via PATCH; edit it in the
+# Instantly dashboard.
 instantly-axi campaign <id>
 instantly-axi campaign <id> --full
 
