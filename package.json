@@ -1,0 +1,45 @@
+{
+  "name": "instantly-axi",
+  "version": "0.1.0",
+  "description": "An AXI-compliant CLI for the Instantly.ai cold-email API: inspect and manage campaigns, leads, and sending accounts from the terminal, with a dry-run/--confirm safety gate on every sending or destructive action.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/ardaatahan/instantly-axi#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ardaatahan/instantly-axi.git"
+  },
+  "keywords": [
+    "axi",
+    "instantly",
+    "cold-email",
+    "cli",
+    "agent"
+  ],
+  "bin": {
+    "instantly-axi": "bin/instantly-axi.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "pretest": "npm run build",
+    "test": "vitest run",
+    "skill:gen": "node scripts/gen-skill.mjs",
+    "skill:check": "node scripts/gen-skill.mjs --check"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
